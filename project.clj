@@ -5,9 +5,13 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2069"]]
+                 [org.clojure/clojurescript "0.0-2069"]
+                 [compojure "1.1.6"]]
   
-  :plugins [[lein-cljsbuild "1.0.0"]]
+  :plugins [[lein-cljsbuild "1.0.0"]
+            [lein-ring "0.8.8"]]
+
+  :ring {:handler modern-cljs.core/handler}
   
   :cljsbuild {:builds
               [{
